@@ -7,6 +7,9 @@ from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement, Comment
 from xml.dom import minidom
 
+import gefilte
+
+
 class GFilter:
     def __init__(self, fish, conditions):
         self.fish = fish
@@ -137,7 +140,7 @@ class GefilteFish:
         self.dom = Element("feed")
         self.dom.set("xmlns", "http://www.w3.org/2005/Atom")
         self.dom.set("xmlns:apps", "http://schemas.google.com/apps/2006")
-        self.dom.append(Comment(" Made by gefilte-fish "))
+        self.dom.append(Comment(f" Made by gefilte {gefilte.__version__}: {gefilte.__url__} "))
 
     def push_filter(self, filter):
         self.filters.append(filter)
