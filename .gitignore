@@ -1,0 +1,16 @@
+# Normal Python things
+*.py[cod]
+__pycache__
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+
+# IDEs and text editors
+*~
+*.swp
+
+# OS X artifacts
+*.DS_Store
