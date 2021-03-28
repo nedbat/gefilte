@@ -6,6 +6,8 @@ Gefilte Fish automates the creation of GMail filters.
 
 Use it like this::
 
+.. code-block:: python
+
     from gefilte import GefilteFish, GFilter
 
     # Specialize GFilter for repo-specific GitHub notifications.
