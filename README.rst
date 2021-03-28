@@ -4,7 +4,7 @@ Gefilte Fish: GMail filter maker
 
 Gefilte Fish automates the creation of GMail filters.
 
-Use it like this::
+Use it like this:
 
 .. code-block:: python
 
