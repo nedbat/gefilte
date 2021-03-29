@@ -65,8 +65,6 @@ class GFilter:
             return
 
         entry = SubElement(elt, "entry")
-        category = SubElement(entry, "category")
-        category.set("term", "filter")
 
         conditions = collections.defaultdict(list)
         for cname, cvalue in self.conditions:
