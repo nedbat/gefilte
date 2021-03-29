@@ -109,7 +109,7 @@ class GFilter:
 
     def delete(self):
         return self._add_action("shouldTrash", "true")
-    
+
     def exact(self, phrase):
         return f'"{phrase}"'
 
@@ -148,11 +148,11 @@ class GefilteFish:
     def finish_filter(self, filter):
         assert self.filters[-1] is filter
         filter._add_entry(self.dom)
-        self.filters.pop()    
+        self.filters.pop()
 
     def __getattr__(self, name):
         return getattr(self.filters[-1], name)
-        
+
     @contextlib.contextmanager
     def dsl(self):
         meths = {meth for meth in dir(self.filter_class) if not meth.startswith("_")}
@@ -162,8 +162,8 @@ class GefilteFish:
             if meth in caller_scope:
                 orig_values[meth] = caller_scope[meth]
             caller_scope[meth] = (
-                lambda meth=meth: 
-                    lambda *args, **kwargs: 
+                lambda meth=meth:
+                    lambda *args, **kwargs:
                         getattr(self, meth)(*args, **kwargs)
                 )()
 
