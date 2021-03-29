@@ -1,7 +1,6 @@
 # Do stuff for Gefilte Fish
 
-.PHONY: clean coverage docs help \
-	quality requirements test test-all upgrade validate
+.PHONY: clean help
 
 .DEFAULT_GOAL := help
 
