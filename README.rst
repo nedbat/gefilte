@@ -2,9 +2,14 @@
 Gefilte Fish: GMail filter maker
 ################################
 
-Gefilte Fish automates the creation of GMail filters.
+Gefilte Fish automates the creation of GMail filters.  You write a Python
+program using gefilte's domain-specific language (DSL), run the program, and
+import the XML it creates.
 
-Use it like this:
+Sample Python
+=============
+
+Here's an example of creating filters:
 
 .. code-block:: python
 
@@ -66,8 +71,8 @@ Use it like this:
                 with from_(exact(who)).repo(where):
                     label("mentee").star().mark_important()
 
-        # Some inbound addresses come to me, mark them so
-        # I understand what I'm # looking at in my inbox.
+        # Some inbound addresses come to me. Mark them so
+        # I understand what I'm looking at in my inbox.
         for toaddr, the_label in [
             ("info@mycompany.com", "info@"),
             ("security@mycompany.com", "security@"),
@@ -83,10 +88,18 @@ The ``with`` clauses create nested contexts in which all of the enclosing
 filters apply.  The ``elif_`` and ``else_`` structures are a little awkward,
 but easier than manually making filters with the same effect.
 
-The output will be XML.  Save it in a file.  Go to GMail - Settings - Filters
-and Blocked Addresses.  Then "Import Filters", "Choose File", "Open File", then
-"Create Filters".  You might want to select "Apply new filters to existing
-email."
+
+Installing filters
+==================
+
+When you run your program, it will create XML output.  Save that output in a
+file.  In your browser, go to GMail - Settings - Filters and Blocked Addresses.
+Then "Import Filters", "Choose File", "Open File", then "Create Filters".
+
+.. note::
+   Be careful with the "Apply new filters to existing email" choice.  "Delete"
+   actions that run on incoming email will delete individual messages, but when
+   run during import, they delete the entire conversation the message is in.
 
 For more information about filtering in GMail, see `Search operators you can
 use with Gmail`__.
