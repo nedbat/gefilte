@@ -117,6 +117,12 @@ unless otherwise noted.  See ``LICENSE.txt`` for details.
 Changelog
 =========
 
+0.5.1 --- 2022-02-23
+--------------------
+
+- Removed unneeded vestigial XML elements from the output.
+
+
 0.5.0 --- 2021-03-28
 --------------------
 
